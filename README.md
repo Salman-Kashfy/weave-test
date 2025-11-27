@@ -139,8 +139,6 @@ When a user is clicked, show their details on the right side:
 
 ### Levenshtein Distance Details
 
-### **What It Is**
-
 The **Levenshtein distance** is the minimum number of single-character
 edits required to transform one string into another.
 
