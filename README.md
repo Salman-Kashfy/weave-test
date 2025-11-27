@@ -135,9 +135,9 @@ When a user is clicked, show their details on the right side:
     -   Live Vercel link
 
 ------------------------------------------------------------------------
-### Annexure 
+## Annexure 
 
-# Levenshtein Distance Details
+### Levenshtein Distance Details
 
 ### **What It Is**
 
@@ -170,27 +170,17 @@ Therefore:
 
 Given two strings **a** (length *m*) and **b** (length *n*), the
 Levenshtein distance **d(m, n)** is defined recursively:
-
--   If `min(m, n) = 0`:
-
-```{=html}
-<!-- -->
 ```
-    distance = max(m, n)
-
--   Otherwise:
-
-```{=html}
-<!-- -->
+If min(m, n) = 0:
+   distance = max(m, n)
+Otherwise:
+   d(i, j) = min(
+       d(i-1, j)   + 1,      // deletion
+       d(i, j-1)   + 1,      // insertion
+       d(i-1, j-1) + cost    // substitution
+   )
 ```
-    d(i, j) = min(
-      d(i-1, j)   + 1,      // deletion
-      d(i, j-1)   + 1,      // insertion
-      d(i-1, j-1) + cost    // substitution
-    )
-
 Where **cost** is:
-
     0 if a[i] == b[j]
     1 otherwise
 
