@@ -38,6 +38,7 @@ This endpoint must:
 
     GET /api/search?q=<term>
 
+
 This endpoint must:
 
 a.  Implement **Levenshtein distance** *from scratch* (no external distance libraries). See [Annexure](#annexure) at the end 
