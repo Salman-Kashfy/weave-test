@@ -12,16 +12,16 @@ const routes = {
 
 function App() {
     const [count, setCount] = useState(0)
-    const [users, setUsers] = useState({})
+    const [users, setUsers] = useState([])
 
     const fetchUsers = () => {
         axios.get(baseUrl+routes.users).then((res) => {
+            console.log(res.data)
             setUsers(res.data)
         })
     }
 
     useEffect(() => {
-
         fetchUsers()
     },[])
 
@@ -36,13 +36,13 @@ function App() {
                     </tr>
                 </thead>
                 <tbody>
-                {users.map((e) => {
-                    <tr>
-                        <td>{e.name}</td>
-                        <td>{e.email}</td>
-                        <td>{e.company.name}</td>
-                    </tr>
-                })}
+                    {users.map((e) => {
+                        <tr>
+                            <td>{e.name}</td>
+                            <td>{e.email}</td>
+                            <td>{e.company.name}</td>
+                        </tr>
+                    })}
                 </tbody>
             </table>
         </>
